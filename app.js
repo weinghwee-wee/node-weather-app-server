@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.use(express.static(__dirname + '/src/public'))
 app.set('views', path.join(__dirname, '/src/views'))
@@ -76,6 +77,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Connected to server')
+app.listen(port, () => {
+  console.log('Connected to server port ' + port)
 })
